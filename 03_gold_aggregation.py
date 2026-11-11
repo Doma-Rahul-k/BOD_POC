@@ -97,7 +97,7 @@ print(f"Written: {GOLD_FLEET_SUMMARY}")
 
 # Cell 5 — Vessel Risk Scores
 # Risk model: dark(25/cap50) + speed(15/cap30) + route(10/cap20) + loiter(5/cap15) + flag(+5)
-# Tiers: HIGH>=60 | MEDIUM>=30 | LOW<30
+# Tiers: HIGH>=25 | MEDIUM>=10 | LOW<10
 
 HIGH_RISK_FLAGS = ["PA", "KM", "TG", "SL", "KH", "VU", "TV"]
 
@@ -261,7 +261,7 @@ for name, table in gold_tables.items():
 
 # Cell 12 — High-Risk Vessel Alert
 
-print("=== HIGH RISK VESSELS (Risk Score >= 60) ===")
+print("=== HIGH RISK VESSELS (Risk Score >= 25) ===")
 (
     spark.table(GOLD_RISK_SCORES)
     .filter(F.col("risk_tier") == "HIGH")
